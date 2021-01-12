@@ -33,9 +33,9 @@ class BookController(
 
     @GetMapping("books/{isbn}")
     suspend fun show(@PathVariable isbn: String): Rendering {
-        val book = repository.findById(isbn)?.let { Book(Isbn(it.isbn), it.title, it.author, it.price) }
-            ?: throw NotFoundException("Book not found. isbn=$isbn")
-
+        val book =
+            repository.findById(isbn)?.let { Book(Isbn(it.isbn), it.title, it.author, it.price) }
+                ?: throw NotFoundException("Book not found. isbn=$isbn")
 
         return Rendering
             .view("show")
