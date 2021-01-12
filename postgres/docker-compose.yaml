@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    build: .
+    container_name: animus-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: jung
+      POSTGRES_DB: animus
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+
+volumes:
+  postgresql-data:
+    driver: local
