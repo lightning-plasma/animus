@@ -1,6 +1,6 @@
 # animus - Spring Boot Webflux Application Sample
 
-Spring Boot WebfluxのシンプルなCRUD アプリケーション   
+Spring Boot WebFluxのシンプルなCRUD アプリケーション   
 Rを実装済み
 
 ## 技術要素
@@ -10,6 +10,7 @@ Rを実装済み
 - R2DBC
 - WebFlux MVC Controller
 - WebFlux Kotlin DSL
+- Thymeleaf
 - BlockHound
 
 Controller / Router の切り替えはAnnotationを付け替える
