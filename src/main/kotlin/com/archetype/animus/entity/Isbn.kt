@@ -1,5 +1,8 @@
 package com.archetype.animus.entity
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Isbn(
     private val value: String
 ) {

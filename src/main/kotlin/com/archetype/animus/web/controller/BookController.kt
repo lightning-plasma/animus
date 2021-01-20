@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.reactive.result.view.Rendering
 
 // controller sample
-@Controller
+// @Controller
 @RequestMapping("/animus")
 class BookController(
     private val repository: BookRepository,

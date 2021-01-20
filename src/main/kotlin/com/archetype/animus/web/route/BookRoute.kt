@@ -14,12 +14,13 @@ import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.ServerResponse.ok
+import org.springframework.web.reactive.function.server.bodyAndAwait
 import org.springframework.web.reactive.function.server.buildAndAwait
 import org.springframework.web.reactive.function.server.coRouter
 import org.springframework.web.reactive.function.server.renderAndAwait
 
 // router sample
-// @Configuration(proxyBeanMethods = false)
+@Configuration(proxyBeanMethods = false)
 class BookRoute {
 
     @Bean
@@ -42,10 +43,14 @@ class BookHandler(
     suspend fun list(req: ServerRequest): ServerResponse {
         val bookFlow =
             repository.findAll().map { Book(Isbn(it.isbn), it.title, it.author, it.price) }
-        return ok().contentType(MediaType.TEXT_HTML).renderAndAwait(
-            "index",
-            mapOf("booksPresenter" to BooksPresenter(bookFlow.toList(mutableListOf())))
-        )
+        // HTML
+        // return ok().contentType(MediaType.TEXT_HTML).renderAndAwait(
+        //     "index",
+        //     mapOf("booksPresenter" to BooksPresenter(bookFlow.toList(mutableListOf())))
+        // )
+
+        // JSON
+        return ok().contentType(MediaType.APPLICATION_JSON).bodyAndAwait(bookFlow)
     }
 
     suspend fun show(req: ServerRequest): ServerResponse {
