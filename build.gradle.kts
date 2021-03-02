@@ -1,11 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+extra["kotlin.version"] = findProperty("kotlinVersion") as String
+
 plugins {
 	id("org.springframework.boot") version "2.4.2"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
-	kotlin("jvm") version "1.4.21"
-	kotlin("plugin.spring") version "1.4.21"
-	kotlin("plugin.serialization") version "1.4.21"
+	kotlin("jvm")
+	kotlin("plugin.spring")
+	kotlin("plugin.serialization")
 }
 
 group = "com.archetype"

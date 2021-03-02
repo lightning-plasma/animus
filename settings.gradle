@@ -1,0 +1,12 @@
+pluginManagement {
+  resolutionStrategy {
+    eachPlugin {
+      if (requested.id.id.startsWith("org.jetbrains.kotlin")) {
+        useVersion("${kotlinVersion}")
+      }
+    }
+  }
+}
+
+rootProject.name = "animus"
+
