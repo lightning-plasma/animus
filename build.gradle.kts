@@ -1,14 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-extra["kotlin.version"] = findProperty("kotlinVersion") as String
-
 plugins {
 	id("org.springframework.boot") version "2.4.2"
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
-	kotlin("jvm")
-	kotlin("plugin.spring")
-	kotlin("plugin.serialization")
+	kotlin("jvm") version "1.4.30"
+	kotlin("plugin.spring") version "1.4.30"
+	kotlin("plugin.serialization") version "1.4.30"
 }
+
+val kotlinVersion = plugins.getPlugin(org.jetbrains.kotlin.gradle.plugin.KotlinPluginWrapper::class.java).kotlinPluginVersion
+extra["kotlin.version"] = kotlinVersion
 
 group = "com.archetype"
 version = "0.0.1-SNAPSHOT"
