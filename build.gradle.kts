@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.4.2"
-    id("io.spring.dependency-management") version "1.0.10.RELEASE"
+    id("org.springframework.boot") version "2.4.5"
+    id("io.spring.dependency-management") version "1.0.11.RELEASE"
     kotlin("jvm") version "1.5.0"
     kotlin("plugin.spring") version "1.4.30"
     kotlin("plugin.serialization") version "1.4.30"
@@ -37,7 +37,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
     // for blockhound
-    implementation("io.projectreactor.tools:blockhound:1.0.4.RELEASE")
+    implementation("io.projectreactor.tools:blockhound:1.0.6.RELEASE")
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-debug")
 
     runtimeOnly("io.r2dbc:r2dbc-postgresql")
