@@ -37,7 +37,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
     // for blockhound
-    implementation("io.projectreactor.tools:blockhound:1.0.6.RELEASE")
+    implementation("io.projectreactor.tools:blockhound:1.0.7.RELEASE")
     runtimeOnly("org.jetbrains.kotlinx:kotlinx-coroutines-debug")
 
     runtimeOnly("io.r2dbc:r2dbc-postgresql")
